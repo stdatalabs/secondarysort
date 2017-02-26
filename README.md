@@ -1,6 +1,6 @@
-# MapReduce VS Spark - WordCount Example
+# MapReduce VS Spark - Secondary Sort Example
 
-Comparing MapReduce to Spark using Wordcount example.
+Comparing MapReduce to Spark using Secondary Sort example.
 
 ## Requirements
 - IDE 
@@ -8,21 +8,21 @@ Comparing MapReduce to Spark using Wordcount example.
 - JVM 6 or 7
 
 ## General Info
-The repository contains both MapReduce and Spark projects MRWordCount and SparkWordCount
-* com/stdatalabs/SparkWordcount
-     * Driver.scala --   Spark code to perform wordcount
-* com/stdatalabs/mapreduce/wordcount
-    * WordCountMapper.java -- Removes special characters from dataset and passes (word, 1) to reducer
-    * WordCountReducer.java -- Aggregates values for each key to output wordcount
-    * sortingMapper.java -- Receives output from previous MR job and swaps the (K, V) pair
-    * sortingComparator.java -- Sorts the mapper output in descending order before passing to reducer
-    * sortingReducer.java -- Swaps the (K, V) pair into (word, count) and sends to output file
-    * WordCountDriver.java -- Driver program for MapReduce jobs
+The repository contains both MapReduce and Spark projects MRSecondarySort and SparkSecondarySort
+* com/stdatalabs/SparkSecondarySort
+     * Driver.scala --   Spark code to perform Secondary Sorting
+* com/stdatalabs/MRSecondarySort
+    * PersonMapper.java -- Reads lastname and firstname and outputs (Person, firstname) as key-value pair
+    * PersonReducer.java -- Reads the list of (Person, firstname) key-value pair and outputs sorted list of (lastname, firstname) in 2 output files
+    * PersonPartitioner.java -- Partitions the Person composite key based on lastname
+    * PersonSortingComparator.java -- Sorts the mapper output based on lastname and then firstname
+    * PersonGroupingComparator.java -- Groups keys with its list of values before sending to reducer
+    * Driver -- Driver program for MapReduce jobs
 
 ## Description
-* A comparison between MapReduce and Apache Spark RDD code using wordcount example 
+* A comparison between MapReduce and Apache Spark RDD code using Secondary Sort example 
   Discussed in blog -- 
-     [MapReduce VS Spark - Wordcount Example](http://stdatalabs.blogspot.in/2017/02/mapreduce-vs-spark-wordcount-example.html)
+     [MapReduce VS Spark - Wordcount Example](http://stdatalabs.blogspot.in/2017/02/mapreduce-vs-spark-secondary-sort.html)
 
 ### More articles on hadoop technology stack at [stdatalabs](stdatalabs.blogspot.com)
 
