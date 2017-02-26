@@ -22,7 +22,7 @@ The repository contains both MapReduce and Spark projects MRSecondarySort and Sp
 ## Description
 * A comparison between MapReduce and Apache Spark RDD code using Secondary Sort example 
   Discussed in blog -- 
-     [MapReduce VS Spark - Wordcount Example](http://stdatalabs.blogspot.in/2017/02/mapreduce-vs-spark-secondary-sort.html)
+     [MapReduce VS Spark - Secondary Sort Example](http://stdatalabs.blogspot.in/2017/02/mapreduce-vs-spark-secondary-sort.html)
 
 ### More articles on hadoop technology stack at [stdatalabs](stdatalabs.blogspot.com)
 
